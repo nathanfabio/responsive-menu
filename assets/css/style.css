@@ -8,7 +8,7 @@
 header {
     background-color: darkblue;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.637);
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .nav-bar {
@@ -66,6 +66,20 @@ header {
     transform: scaleX(1);
 }
 
+.btn {
+    display: flex;
+    gap: .8rem;
+}
+
+.btn button:last-child {
+    background-color: #fff;
+    color: darkblue;
+}
+
+.btn button:hover {
+    transform: scale(0.98);
+}
+
 .btn button {
     background-color: transparent;
     border: 1px solid #fff;
@@ -92,6 +106,7 @@ header {
     cursor: pointer;
     border: none;
     color: #fff;
+    font-size: 1.5rem;
 }
 
 .mobile-menu {
@@ -116,6 +131,19 @@ header {
         display: none;
     }
 
+    .btn button {
+        margin-bottom: .8rem;
+    }
+
+    .btn button:last-child {
+        background-color: #fff;
+        color: darkblue;
+    }
+
+    .btn button:hover {
+        transform: scale(0.98);
+    }
+
     .menu-mobile {
         display: block;
     }
@@ -124,6 +152,15 @@ header {
         background-color: transparent;
         border: none;
         cursor: pointer;
+    }
+
+    .mobile-menu {
+        background-color: darkblue;
+        animation: upToDown .8s ease-in-out;
+    }
+
+    .mobile-menu > .mobile-menu-content {
+        animation: opacity .8s ease-in-out;
     }
 
     .mobile-menu .nav-item{
@@ -150,4 +187,24 @@ header {
     .open {
         display: block;
     }
+
+    @keyframes upToDown {
+        from {
+          transform: translateY(-15%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes opacity {
+        from {
+          opacity: 0;
+          transform: translateY(-20%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 }
